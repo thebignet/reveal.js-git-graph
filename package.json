@@ -1,0 +1,29 @@
+{
+  "name": "reveal-git-graph-webpack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "git-graph.js",
+  "scripts": {
+    "build": "webpack --progress --colors",
+    "build:watch": "yarn build --watch",
+    "upgrade": "yarn-upgrade-all"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^8.0.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "css-loader": "^0.28.9",
+    "postcss-loader": "^2.1.0",
+    "standard": "^10.0.3",
+    "style-loader": "^0.20.2",
+    "webpack": "^3.10.0",
+    "yarn-upgrade-all": "^0.3.0"
+  },
+  "dependencies": {
+    "mermaid": "^7.1.2"
+  }
+}

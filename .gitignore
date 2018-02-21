@@ -1,0 +1,4 @@
+dist
+package-lock.json
+.sonarlint
+node_modules
