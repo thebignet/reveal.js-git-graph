@@ -1,5 +1,5 @@
 import mermaid from 'mermaid'
-require("./git-graph.css");
+//require("./git-graph.css");
 
 var RevealGitGraph = window.RevealGitGraph || (function () {
     Reveal.addEventListener('ready', function () {
@@ -27,7 +27,55 @@ var RevealGitGraph = window.RevealGitGraph || (function () {
             }
         };
 
-        mermaid.initialize(options);
+        var style = document.createElement('style');
+        style.type = 'text/css';
+        style.innerHTML =
+        'div.mermaid {\
+            font-size: 16px;\
+        }\
+        div.mermaid p {\
+            margin: 5px 0 0 0;\
+        }\
+        div.mermaid svg {\
+            height: 300px;\
+        }\
+        span.branch-label {\
+            color: black;\
+            border: 3px solid '+options.gitGraph.nodeStrokeColor+';\
+            background-color: '+options.gitGraph.nodeFillColor+';\
+            display: block;\
+            position: relative;\
+        }\
+        span.commit-id {\
+            color: lightgrey;\
+            display: block;\
+            position: relative;\
+        }';
+        document.getElementsByTagName('head')[0].appendChild(style);
+
+        console.log(options);
+        mermaid.initialize({
+            startOnLoad: true,
+            cloneCssStyles: true,
+            flowchart: {
+                htmlLabels: false,
+                useMaxWidth: true
+            },
+            gitGraph: {
+                nodeFillColor: "#4ED1A1",
+                nodeSpacing: 150,
+                nodeStrokeWidth: 3,
+                nodeStrokeColor: "#555",
+                nodeRadius: 17,
+                nodeLabel: {
+                    width: 100,
+                    height: 100,
+                    x: -50,
+                    y: 20
+                },
+                branchColors: ["#555", "#555", "#555", "#555"]
+            }
+});
 
         setTimeout(function () {
             var branches = document.getElementsByClassName("branch-label");
