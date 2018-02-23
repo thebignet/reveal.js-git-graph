@@ -24,6 +24,7 @@
     "yarn-upgrade-all": "^0.3.0"
   },
   "dependencies": {
-    "mermaid": "^7.1.2"
+    "mermaid": "^7.1.2",
+    "mustache-loader": "^1.4.0"
   }
 }
