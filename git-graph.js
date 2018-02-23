@@ -28,28 +28,8 @@ var RevealGitGraph = window.RevealGitGraph || (function () {
 
         var style = document.createElement('style');
         style.type = 'text/css';
-        style.innerHTML =
-        'div.mermaid {\
-            font-size: 16px;\
-        }\
-        div.mermaid p {\
-            margin: 5px 0 0 0;\
-        }\
-        div.mermaid svg {\
-            height: 300px;\
-        }\
-        span.branch-label {\
-            color: black;\
-            border: 3px solid '+options.gitGraph.nodeStrokeColor+';\
-            background-color: '+options.gitGraph.nodeFillColor+';\
-            display: block;\
-            position: relative;\
-        }\
-        span.commit-id {\
-            color: lightgrey;\
-            display: block;\
-            position: relative;\
-        }';
+        var gitGraphCss = require('./git-graph.css.mustache');
+        style.innerHTML = gitGraphCss(options);
         document.getElementsByTagName('head')[0].appendChild(style);
 
         mermaid.initialize(options);
