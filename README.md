@@ -7,7 +7,8 @@ A [mermaidjs](https://github.com/knsv/mermaid) [reveal](https://revealjs.com/) p
 
 These git commands produce the following SVG object
 
-```
+```html
+<div class="mermaid">
 gitGraph:
 commit
 branch newbranch
@@ -18,6 +19,7 @@ checkout master
 commit
 commit
 merge newbranch
+</div>
 ```
 
 ![Example git graph](git-graph-example.png)
