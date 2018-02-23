@@ -5,7 +5,7 @@ A [mermaidjs](https://github.com/knsv/mermaid) [reveal](https://revealjs.com/) p
 
 ## Example
 
-These git commands produce the following SVG object
+Add the following code to your Reveal.js presentation.
 
 ```html
 <div class="mermaid">
@@ -21,6 +21,8 @@ commit
 merge newbranch
 </div>
 ```
+
+It will be replaced by the following SVG object
 
 ![Example git graph](git-graph-example.png)
 
