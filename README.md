@@ -2,6 +2,26 @@
 
 A [mermaidjs](https://github.com/knsv/mermaid) [reveal](https://revealjs.com/) plugin to generate a visual git graph from a list of simple git commands.
 
+
+## Example
+
+These git commands produce the following SVG object
+
+```
+gitGraph:
+commit
+branch newbranch
+checkout newbranch
+commit
+commit
+checkout master
+commit
+commit
+merge newbranch
+```
+
+![Example git graph](git-graph-example.png)
+
 ## Installation
 
 ### Bower
@@ -14,13 +34,13 @@ Add the plugin to the dependencies in your presentation, as below.
 
 ```javascript
 Reveal.initialize({
-	// ...
-	
-	dependencies: [
-		// ... 
-	  
-		{ src: 'bower_components/reveal.js-git-graph/dist/git-graph.min.js' }
-	]
+  // ...
+  
+  dependencies: [
+    // ... 
+    
+    { src: 'bower_components/reveal.js-git-graph/dist/git-graph.min.js' }
+  ]
 });
 ```
 
@@ -34,13 +54,13 @@ Add the plugin to the dependencies in your presentation, as below.
 
 ```javascript
 Reveal.initialize({
-	// ...
-	
-	dependencies: [
-		// ... 
-	  
-		{ src: 'node_modules/reveal.js-git-graph/git-graph.min.js' }
-	]
+  // ...
+  
+  dependencies: [
+    // ... 
+    
+    { src: 'node_modules/reveal.js-git-graph/git-graph.min.js' }
+  ]
 });
 ```
 
@@ -52,13 +72,13 @@ Add the plugin to the dependencies in your presentation, as below.
 
 ```javascript
 Reveal.initialize({
-	// ...
-	
-	dependencies: [
-		// ... 
-	  
-		{ src: 'plugin/git-graph/dist/git-graph.min.js' }
-	]
+  // ...
+  
+  dependencies: [
+    // ... 
+    
+    { src: 'plugin/git-graph/dist/git-graph.min.js' }
+  ]
 });
 ```
 
@@ -68,9 +88,9 @@ You can configure the mermaidjs options by providing a ```mermaid``` option in t
 
 ```javascript
 Reveal.initialize({
-	// ...
+  // ...
 
-	mermaid: {
+  mermaid: {
     startOnLoad: true,
     cloneCssStyles: true,
     flowchart: {
