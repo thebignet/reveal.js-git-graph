@@ -4,10 +4,7 @@ require("./git-graph.css");
 var RevealGitGraph = window.RevealGitGraph || (function () {
     Reveal.addEventListener('ready', function () {
         var config = Reveal.getConfig();
-        //TODO add some knobs
-        var options = config.gitgraph || {};
-
-        mermaid.initialize({
+        var options = config.mermaid || {
             startOnLoad: true,
             cloneCssStyles: true,
             flowchart: {
@@ -28,7 +25,9 @@ var RevealGitGraph = window.RevealGitGraph || (function () {
                 },
                 branchColors: ["#555", "#555", "#555", "#555"]
             }
-        });
+        };
+
+        mermaid.initialize(options);
 
         setTimeout(function () {
             var branches = document.getElementsByClassName("branch-label");
