@@ -30,14 +30,6 @@ const config = {
         loader: [
           'mustache-loader'
         ]
-      },
-      {
-        test: /\.css$/,
-        loader: [
-          'style-loader',
-          'css-loader',
-          'postcss-loader'
-        ]
       }
     ]
   }
